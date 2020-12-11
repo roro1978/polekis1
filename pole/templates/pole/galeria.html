@@ -1,86 +1,24 @@
-<!DOCTYPE html>
-<html lang="es">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Polekiss</title>
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
-    <link href="https://fonts.googleapis.com/css2?family=Balsamiq+Sans:ital,wght@0,700;1,400;1,700&family=Open+Sans:ital,wght@0,400;0,700;1,600&display=swap" rel="stylesheet">
-    <link rel="stylesheet" href="css/estilos.css">
-    <body background="img/Negro_1.png">
-        <div class="rodr"><h2>Galeria de Productos</h2></div> 
-</head>
-<body>
+{% extends 'pole/base.html' %}
+{% load static %}
 
-    
-    <header>
-        <img class="menu" src="img/menuiconwhite.png" alt="menu">
-        <div class="contenedor_logo">
-            <img  class="logo"  src="img/logotipo.png" alt="logo">
-        </div>
-        <div>
-            
-            <nav>
-                <ul>
-                    <li>
-                        <a href="index.html"> Inicio </a>
-                    </li>
-                    <li><a href="galeria.html">Galería</a></li>
-                    <li>
-                    <li><a href="quienes somos.html">quienes somos</a>
-                    </li>
-                    <li>
-                        <a href="contacto.html">Contacto</a>
-                    </li>
-                    
-                        <a href="quienes somos.html"></a>
-                    </li>
-                </ul>
-            </nav>
-        </div>
+{% block js %}
+<script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
+{% endblock %}
 
-    </header>
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css" />
+{% endblock %}
 
-    <div id="contenido">
+{% block contenido %}
 
-           <h2>Galería de nuestra tienda</h2>
-           <br><br>
-           <div class="galeria">
-                <a data-fancybox="gallery" href="img/tienda/tienda6.jpg"><img src="img/tienda/tienda6.jpg"></a>
-                <a data-fancybox="gallery" href="img/tienda/tienda8.jpg"><img src="img/tienda/tienda8.jpg"></a>
-                <a data-fancybox="gallery" href="img/tienda/tienda9.jpg"><img src="img/tienda/tienda9.jpg"></a>
-                <a data-fancybox="gallery" href="img/tienda/tienda11.jpg"><img src="img/tienda/tienda11.jpg"></a>
-                <a data-fancybox="gallery" href="img/tienda/tienda12.jpg"><img src="img/tienda/tienda12.jpg"></a>     
-           </div>
-           
+<h2>Galería de nuestra tienda</h2>
+<br><br>
+<div class="galeria">
+    <a data-fancybox="gallery" href="{% static 'pole/img/tienda/tienda6.jpg' %}"><img src="{% static 'pole/img/tienda/tienda6.jpg' %}"></a>
+    <a data-fancybox="gallery" href="{% static 'pole/img/tienda/tienda8.jpg' %}"><img src="{% static 'pole/img/tienda/tienda8.jpg' %}"></a>
+    <a data-fancybox="gallery" href="{% static 'pole/img/tienda/tienda9.jpg' %}"><img src="{% static 'pole/img/tienda/tienda9.jpg' %}"></a>
+    <a data-fancybox="gallery" href="{% static 'pole/img/tienda/tienda11.jpg' %}"><img src="{% static 'pole/img/tienda/tienda11.jpg' %}"></a>
+    <a data-fancybox="gallery" href="{% static 'pole/img/tienda/tienda12.jpg' %}"><img src="{% static 'pole/img/tienda/tienda12.jpg' %}"></a>     
+</div>
 
-
-     
-
-    </div>
-
-
-    <footer>
-        
-        <div class="marcas">
-            <img src="img/naruto.jpg" alt="naruto">
-            <img src="img/autronauta.jpg" alt="autronauta">
-            <img src="img/cenicienta.jpg" alt="cenicienta">
-            <img src="img/donRamon.jpg" alt="donramon">
-            <img src="img/coyote.jpg" alt="coyote">
-        </div>
-        <div class="logo_footer">
-            <img src="img/poleron.png" alt="logo">
-        </div>
-    </footer>
-    <h3>Fono contacto</h3>
-    <div>+56998765431</div>
-    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-
-
-   
-
-</body>
-</html>
+{% endblock %}
