@@ -26,7 +26,8 @@ SECRET_KEY = '2!e9#*nv+ek-tn_mr9su9%-b(7aro$yb5j7foy46g98q)+6@^w'
 DEBUG = True
 
 ALLOWED_HOSTS = []
-
+SOCIAL_AUTH_FACEBOOK_KEY = '1381003745577482'
+SOCIAL_AUTH_FACEBOOK_SECRET = '2fb47396ba2f7e4d288b4c199ca5b575'
 
 # Application definition
 
@@ -37,7 +38,9 @@ INSTALLED_APPS = [
     'django.contrib.sessions',
     'django.contrib.messages',
     'django.contrib.staticfiles',
-    'pole'
+    'social_django',
+    'pwa',
+    'pole',
     
 ]
 
@@ -49,6 +52,7 @@ MIDDLEWARE = [
     'django.contrib.auth.middleware.AuthenticationMiddleware',
     'django.contrib.messages.middleware.MessageMiddleware',
     'django.middleware.clickjacking.XFrameOptionsMiddleware',
+    'social_django.middleware.SocialAuthExceptionMiddleware',
 ]
 
 ROOT_URLCONF = 'polekis.urls'
@@ -64,6 +68,9 @@ TEMPLATES = [
                 'django.template.context_processors.request',
                 'django.contrib.auth.context_processors.auth',
                 'django.contrib.messages.context_processors.messages',
+                'social_django.context_processors.backends',
+                'social_django.context_processors.login_redirect',
+
             ],
         },
     },
@@ -120,3 +127,20 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+
+AUTHENTICATION_BACKENDS = (
+    'social_core.backends.facebook.FacebookOAuth2',
+    'django.contrib.auth.backends.ModelBackend',
+)
+
+
+PWA_APP_NAME ="POLEKIS"
+PWA_APP_DESCRIPTION= "pagina de poleras"
+PWA_APP_THERE_COLOR = "#3477f5"
+PWA_APP_background_COLOR = "#6699f7"
+PWA_APP_ICONS =[
+    {
+        "src": "/static/pole/img/favicon.ico"
+        "sizes" "160X160"
+    }
+]
