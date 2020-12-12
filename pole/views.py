@@ -12,4 +12,6 @@ def quienessomos(request):
     return render(request, 'pole/quienessomos.html')
 
 def galeria(request):
-    return render(request, 'pole/galeria.html')    
+    return render(request, 'pole/galeria.html')
+
+#20635783-5
