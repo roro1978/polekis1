@@ -10,7 +10,7 @@ For the full list of settings and their values, see
 https://docs.djangoproject.com/en/3.1/ref/settings/
 """
 
-from pathlib import Path
+from pathlib import Path, os
 
 # Build paths inside the project like this: BASE_DIR / 'subdir'.
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -39,9 +39,9 @@ INSTALLED_APPS = [
     'django.contrib.messages',
     'django.contrib.staticfiles',
     'social_django',
-    'pwa',
+    'rest_framework',
     'pole',
-    
+    'pwa',
 ]
 
 MIDDLEWARE = [
@@ -127,6 +127,10 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/3.1/howto/static-files/
 
 STATIC_URL = '/static/'
+STATIC_ROOT = os.path.join(BASE_DIR, 'pole/static')
+
+MEDIA_URL = '/img/'
+MEDIA_ROOT = os.path.join(BASE_DIR, 'pole/static/img')
 
 AUTHENTICATION_BACKENDS = (
     'social_core.backends.facebook.FacebookOAuth2',
@@ -134,13 +138,21 @@ AUTHENTICATION_BACKENDS = (
 )
 
 
-PWA_APP_NAME ="POLEKIS"
-PWA_APP_DESCRIPTION= "pagina de poleras"
-PWA_APP_THERE_COLOR = "#3477f5"
-PWA_APP_background_COLOR = "#6699f7"
+PWA_APP_NAME = 'POLEKIS'
+PWA_APP_DESCRIPTION = 'pagina de poleras'
+PWA_APP_THEME_COLOR = '#3477f5'
+PWA_APP_BACKGROUND_COLOR = '#6699f7'
 PWA_APP_ICONS =[
     {
-        "src": "/static/pole/img/favicon.ico"
-        "sizes" "160X160"
+        'src' : '/static/pole/img/logotipo.png',
+        'sizes' : '160X160'
     }
 ]
+PWA_APP_ICONS_APPLE =[
+    {
+        'src' : '/static/pole/img/logotipo.png',
+        'sizes' : '160X160'
+    }
+]
+
+PWA_SERVICE_WORKER_PATH = os.path.join(BASE_DIR,'serviceworker.js')

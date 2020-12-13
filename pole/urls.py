@@ -1,4 +1,4 @@
-from django.urls import path
+from django.urls import path, re_path
 from.views import pole, contacto, quienessomos, galeria
 
 urlpatterns = [

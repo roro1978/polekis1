@@ -1,0 +1,100 @@
+{% extends 'pole/base.html' %}
+
+{% block contenido %}
+{% block js %}
+<script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+
+<script>
+    $(document).ready(function() {
+      $('.slider').bxSlider({
+          mode: 'fade',//horizontal, vertical, fade
+          auto: true,
+          pause: 2000
+      });
+    });
+</script>
+{% endblock %}
+
+{% block css %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.css">
+{% endblock %}
+
+
+<div class="slider">
+    <div>
+        <img src="{% static 'pole/img/banner/banner4.jpeg' %}" alt="">
+    </div>
+    <div>
+        <img src="{% static 'pole/img/banner/banner5.jpeg' %}" alt="">
+    </div>
+    <div>
+        <img src="{% static 'pole/img/banner/banner6.jpeg' %}" alt="">
+    </div>
+
+    </header>
+    <div id="contenido">
+
+        <div class="slider">
+            
+                <div>
+                    <img src="{% static 'pole/img/banner/banner4.jpeg'%}" alt="">
+                </div>
+                <div>
+                    <img src="{% static 'pole/img/banner/banner5.jpeg'%}" alt="">
+                </div>
+                <div>
+                    <img src="{% static 'pole/mg/banner/banner6.jpeg'%}" alt="">
+                </div>
+            </div>
+        <h2>Quienes Somos</h2>
+        <h3 class=".pol"></h3>
+        <b>Somos una empresa familiar que se dedica hace 10 años a la confecion de polerones y estampados.</b>
+        <b>Nuestra  empresa confeciona la gran parte de sus productos con algodones de la región, donde nos enfocamos en</b>
+        <b>personalizar las prendas de nuestros clientes.</b></h3>
+
+
+    <footer>
+       
+        <div class="marcas">
+            <img src="img/naruto.jpg" alt="naruto">
+            <img src="img/autronauta.jpg" alt="autronauta">
+            <img src="img/cenicienta.jpg" alt="cenicienta">
+            <img src="img/donRamon.jpg" alt="donramon">
+            <img src="img/coyote.jpg" alt="coyote">
+        </div>
+        <div class="logo_footer">
+            <img src="img/poleron.png" alt="logo">
+        </div>
+    </footer>
+    <form method="post" action="" name="signup-form">
+        <div class="form-element">
+            <label>Username</label>
+            <input type="text" name="username" pattern="[a-zA-Z0-9]+" required />
+        </div>
+        <div class="form-element">
+            <label>Email</label>
+            <input type="email" name="email" required />
+        </div>
+        <div class="form-element">
+            <label>Password</label>
+            <input type="password" name="password" required />
+        </div>
+        <button type="submit" name="register" value="register">Register</button>
+    <h3>Fono contacto</h3>
+    <div>+56998765431</div>
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.1.1/jquery.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/bxslider/4.2.12/jquery.bxslider.min.js"></script>
+    <script src="js/menu.js"></script>
+
+    <script>
+        $(document).ready(function() {
+          $('.slider').bxSlider({
+              mode: 'fade',//horizontal, vertical, fade
+              auto: true,
+              pause: 2000
+          });
+        });
+    </script>
+
+</body>
+</html>
